@@ -17,7 +17,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "app.moodist"
+      "bundleIdentifier": "app.moodist",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -25,13 +28,22 @@
         "backgroundColor": "#09090b"
       },
       "edgeToEdgeEnabled": true,
-      "package": "app.moodist"
+      "package": "app.moodist",
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-av"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "dcb090fa-e822-4f9a-8bb5-364ddb97f8b6"
+      }
+    }
   }
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
 import { Category } from './category/category';
+import { Header } from '@/components/header/header';
+import { Buttons } from '@/components/buttons/buttons';
 
 import type { Categories as CategoriesType } from '@/data/types';
 
@@ -16,6 +18,8 @@ export function Categories({ categories }: CategoriesProps) {
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
+      <Header />
+      <Buttons />
       {categories.map((category) => (
         <Category 
           key={category.id}

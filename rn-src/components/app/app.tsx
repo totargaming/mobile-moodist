@@ -1,8 +1,7 @@
 import React, { useMemo, useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 
 import { Categories } from '@/components/categories/categories';
-import { Buttons } from '@/components/buttons/buttons';
 import { Container } from '@/components/container';
 
 import { useSoundStore } from '@/stores/sound';
@@ -13,7 +12,7 @@ import { sounds } from '@/data/sounds';
 import type { Sound } from '@/data/types';
 
 // Placeholder heart icon component
-const HeartIcon = () => '♥';
+const HeartIcon = () => <Text style={{ fontSize: 16 }}>♥</Text>;
 
 export function App() {
   const categories = useMemo(() => sounds.categories, []);
@@ -50,7 +49,6 @@ export function App() {
   return (
     <View style={styles.container}>
       <Container>
-        <Buttons />
         <Categories categories={allCategories} />
       </Container>
     </View>

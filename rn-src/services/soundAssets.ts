@@ -97,6 +97,11 @@ export const soundAssets: Record<string, any> = {
   'temple': require('../../assets/sounds/places/temple.mp3'),
   'underwater': require('../../assets/sounds/places/underwater.mp3'),
 
+  // Noise sounds (WAV files)
+  'white-noise': require('../../assets/sounds/noise/white-noise.wav'),
+  'pink-noise': require('../../assets/sounds/noise/pink-noise.wav'),
+  'brown-noise': require('../../assets/sounds/noise/brown-noise.wav'),
+
   // Additional root sounds
   'alarm': require('../../assets/sounds/alarm.mp3'),
   'silence': require('../../assets/sounds/silence.mp3'),

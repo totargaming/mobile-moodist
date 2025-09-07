@@ -15,9 +15,9 @@ export function Range({ id, label }: RangeProps) {
   const isSelected = useSoundStore(state => state.sounds[id]?.isSelected || false);
   const locked = useSoundStore(state => state.locked);
 
-  const handleVolumeChange = (value: number) => {
+  const handleVolumeChange = async (value: number) => {
     if (!locked && isSelected) {
-      updateVolume(id, value);
+      await updateVolume(id, value);
     }
   };
 
@@ -32,6 +32,9 @@ export function Range({ id, label }: RangeProps) {
         disabled={!isSelected || locked}
         minimumTrackTintColor={isSelected ? '#ffffff' : '#71717a'}
         maximumTrackTintColor="rgba(113, 113, 122, 0.3)"
+        thumbStyle={styles.thumb}
+        trackStyle={styles.track}
+        step={0.01} // Smooth slider movement (100 steps)
         accessibilityLabel={`${label} sound volume`}
       />
     </View>
@@ -47,5 +50,23 @@ const styles = StyleSheet.create({
   slider: {
     width: '100%',
     height: 20,
+  },
+  thumb: {
+    width: 16,
+    height: 16,
+    backgroundColor: '#ffffff',
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 1,
+    elevation: 2,
+  },
+  track: {
+    height: 3,
+    borderRadius: 1.5,
   },
 });
